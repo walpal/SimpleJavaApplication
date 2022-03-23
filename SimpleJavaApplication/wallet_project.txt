@@ -1,0 +1,62 @@
+
+* Code Generators: increase speed of delivery; but only after you pay your dues
+* "Don't wait to finish learning before you start doing"
+* What the Ruby APIs look like: https://rubyvaultwallet.azurewebsites.net/swagger/index.html
+* We will be using Heroku - a platform to expose/host your APIs on the internet
+* Our Project: Designing a wallet solution - see below
+
+"You never know how much ready you'd always been until you start writing your first line of code and start pushing to github."
+
+THE PROJECT
+THE MOBILE FRONT END (Android/react native) - Niyi
+=====
+Screens
+Login
+Balance and Statement dashboards
+transfer-history
+transfer
+Bill payment
+Airtime and data dashboard
+logout
+
+THE MIDDLEWARE LAYER
+Balance API - Tolu
+Statement API - Wale
+Airtime/Data API
+transfer API
+Bill payment API
+Login and logut API
+Profile mgt
+OTP (creation and validation) - Murewa
+PIN mgt (creation, validation and reset) - Wale
+
+THE BACKEND LAYER
+Corebanking APIs (transfer, reversal, Balance, Statement) - Evi, Murewa
+Account mgt APIs (Create, update, read, delete profiles) - Jide/Niyi
+Balance API - Tolu
+Statement API - Wale
+
+3rd Party API Wrappers
+Bill payment API Wrapper
+Airtime API Wrapper
+Interbank transfer API Wrapper
+
+DATABASE TABLES
+WLT_T_WALLET BALANCES (ACCOUNT_NUMBER AND THE BALANCE)
+WLT_T_DAY2DAY_RECORDS (ACCOUNT_NUMBER AND THE TRANSACTION)
+
+NOTE:
+INTERNAL WALLET TRXNS
+===============e.g
+DR - TOLU - 1,000,000
+CR - MUYIWA - 1,000,000
+
+EXTERNAL TRXNS - AIRTIME/INTERBANK OR INTERWALLET TRANSFER/BILL PAYMENT
+====================
+TRANSFER
+DR - debit CUSTOMER
+CR - credit TRANSIT OR INCOME OR SETTLEMENT OR POOP  OR GL ACCOUNT
+
+REVERSAL (NEEDED ONLY WHEN THE TRXN FAILS)
+DR - DEBIT TRANSIT OR INCOME OR OR SETTLEMENT OR POOP  OR GL ACCOUNT
+CR - CREDIT CUSTOMER
